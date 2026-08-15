@@ -19,9 +19,16 @@ Initial public research baseline.
 - permanent counterexample registry;
 - timestamped prediction ledger;
 - ART / TSTO / JEP layering;
-- initial cross-domain cases;
+- initial cross-domain prose cases;
+- machine-readable `ART Falsification Corpus v0.1`;
+- JSON Schema for falsification cases;
+- 20 initial adversarial cases across ten domains;
+- corpus index and explicit verdict vocabulary;
+- automated corpus validation script and GitHub Actions workflow;
 - Zenodo and citation metadata.
 
 ### Research status
 
 No claim of universality, uniqueness, or minimal primitive completeness is made in v0.1.
+
+The first 20 machine-readable cases are synthetic adversarial probes. They must not be cited as empirical support for ART. Their purpose is to expose assumptions, define repeatable attacks, and establish a corpus format that can later contain independently documented real systems, incidents, and comparative designs.

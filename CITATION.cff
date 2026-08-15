@@ -1,0 +1,24 @@
+cff-version: 1.2.0
+message: "If you use or discuss ART, please cite this work."
+title: "Accountable Reality Transition (ART): A Falsifiable Framework for Autonomous Action Across Trust Boundaries"
+type: article
+authors:
+  - name: "Cognitive Emergence"
+version: "0.1"
+date-released: 2026-08-15
+repository-code: "https://github.com/cognitive-emergence/ART"
+license: "CC-BY-4.0"
+keywords:
+  - accountable reality transition
+  - autonomous agents
+  - AI agents
+  - judgment
+  - delegation
+  - bounded authority
+  - verification
+  - state transition
+  - accountability
+  - TSTO
+  - JEP
+abstract: >-
+  ART is a falsifiable theoretical framework for investigating which structures become non-removable when autonomous actors cause consequential changes across trust boundaries. The current research program focuses on Target, Bounded Authority, Verification, and the conditional emergence of Judgment, Delegation, Termination, attribution, responsibility, and settlement.

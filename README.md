@@ -43,6 +43,31 @@ The project therefore uses five primary tests:
 
 A failed hypothesis should be revised or removed rather than protected.
 
+## Machine-readable falsification corpus
+
+ART includes a machine-readable corpus under [`corpus/`](corpus/) rather than relying only on prose examples.
+
+The initial `v0.1` corpus contains **20 adversarial cases across ten domains**. Each case identifies:
+
+- the operational setting and trust boundary;
+- the candidate structure under attack;
+- the deletion/substitution procedure;
+- allowed alternatives;
+- evidence required to evaluate the attack;
+- the condition that would weaken or falsify the claim;
+- a verdict vocabulary of `SURVIVES`, `WEAKENED`, `FALSIFIED`, or `INDETERMINATE`.
+
+Cases conform to [`corpus/schema/art-case.schema.json`](corpus/schema/art-case.schema.json). A CI workflow validates schema conformance, unique case IDs, filename/ID consistency, and corpus-index completeness on relevant pushes and pull requests.
+
+Local validation:
+
+```sh
+python -m pip install "jsonschema[format]>=4.23,<5"
+python scripts/validate_corpus.py
+```
+
+The initial cases are synthetic adversarial probes. They are not empirical evidence for ART. The research goal is to progressively replace them with independently documented real systems, incidents, comparative designs, and reproducible traces.
+
 ## Relationship to TSTO and JEP
 
 ART is the **theory layer**. It is intentionally distinct from specific engineering artifacts.
@@ -82,6 +107,13 @@ ART does not require TSTO or JEP to be correct. TSTO and JEP do not prove ART. E
 │   ├── inevitability-tests.md
 │   ├── alternative-grammars.md
 │   └── counterexample-registry.md
+├── corpus/
+│   ├── README.md
+│   ├── index.json
+│   ├── schema/art-case.schema.json
+│   └── cases/                 # 20 initial adversarial JSON cases
+├── scripts/
+│   └── validate_corpus.py
 ├── predictions/
 │   └── prediction-ledger.md
 ├── relationships/
@@ -114,7 +146,7 @@ The immediate priorities are:
 
 1. test whether **Target, Bounded Authority, and Verification** are operationally non-removable under stated conditions;
 2. test whether **Judgment, Delegation, Termination, and Verification** form a minimal event basis or whether a smaller/better grammar exists;
-3. build a cross-domain falsification corpus;
+3. grow the machine-readable falsification corpus from synthetic probes into documented real systems and incidents;
 4. maintain a timestamped prediction ledger;
 5. invite independent alternative designs and publish failures openly.
 

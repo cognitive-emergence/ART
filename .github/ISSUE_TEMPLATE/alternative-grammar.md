@@ -1,7 +1,7 @@
 ---
 name: Alternative grammar
 about: Propose a smaller or better decomposition than the current ART model
- title: "[Alternative grammar] "
+title: "[Alternative grammar] "
 labels: ""
 assignees: ""
 ---
